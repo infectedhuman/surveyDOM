@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DATA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+        <label for="fname">First name</label>
+        <input type="text" name="fname" id="fname" required>
+        <label for="lname">Last name</label>
+        <input type="text" name="lname" id="lname" required>
+        </div>
+        <label for="email"  placeholder="Type to Search">EMAIL</label>
+        <input type="text" name="email" id="email">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address">
+        <label for="food">Choice of food:</label>
+        <input type="text" name="food" id="food">
+        <div class="row">  
+        </div>
+        <div class="row">
+            <label for="state">State</label>
+            <input type="text" name="state" id="state">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country">
+            </div>
+            <div class="row">  
+            <label for="pincode">Pincode</label>
+            <input type="text" name="pincode" id="pincode">
+            <label for="gender">gender</label>
+            <input type="text" name="gender" id="gender">
+            </div>
+        <input type="button" name="button" id="btn" value="Add" onclick="AddRow()">
+        
+        
+    </div>
+
+    <table id="show">
+
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>choice of food</th>
+            <th>gender</th>
+            <th>pincode</th>
+            <th>state</th>
+            <th>country</th>
+        </tr>
+
+    </table>
+
+
+    <script>
+
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var list6 = [];
+        var list7 = [];
+        var list8 = [];
+        var list9 = [];
+        var list10=[];
+        
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow() {
+
+            var AddRown = document.getElementById('show');
+            var NewRow = AddRown.insertRow(n);
+            let inputs=document.querySelectorAll('input');
+            var clear="";
+
+            list1[x] = document.getElementById("fname").value;
+            list2[x] = document.getElementById("lname").value;
+            list3[x] = document.getElementById("email").value;
+            list4[x] = document.getElementById("address").value;
+            list6[x] = document.getElementById("state").value;
+            list7[x] = document.getElementById("country").value;
+            list8[x] = document.getElementById("pincode").value;
+            list9[x] = document.getElementById("gender").value;
+            list10[x] = document.getElementById('food').value;
+            
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+            var cel7 = NewRow.insertCell(6);
+            var cel8 = NewRow.insertCell(7);
+            var cel9 = NewRow.insertCell(8);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+            cel5.innerHTML = list10[x];
+            cel6.innerHTML = list9[x];
+            cel7.innerHTML = list8[x];
+            cel8.innerHTML = list6[x];
+            cel9.innerHTML = list7[x];
+        
+            document.getElementById("fname").innerHTML=" ";
+            document.getElementById("lname").innerHTML=" "
+            document.getElementById("email").innerHTML=" "
+            document.getElementById("address").innerHTML=" "
+            document.getElementById("state").innerHTML=" "
+            document.getElementById("country").innerHTML=" "
+            document.getElementById("pincode").innerHTML=" "
+            document.getElementById("gender").innerHTML=" "
+            inputs.innerHTML=" ";
+            document.querySelectorAll('input').reset();
+
+            n++;
+            x++;
+            
+        }
+    </script>
+</body>
+
+</html>
